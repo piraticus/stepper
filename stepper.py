@@ -27,14 +27,13 @@ class Stepper:
                 time.sleep(.001)
     
     def step(self, steps):
-        allOff()
+        self.allOff()
         for i in range(abs(steps)):
             if steps >= 0:
-                oneStep(self.pinsF)
-                lastPin(self.pinsF)
+                self.oneStep(self.pinsF)
+                self.lastPin(self.pinsF)
             elif steps < 0:
-                oneStep(self.pinsR)
-                lastPin(self.pinsR)
+                self.oneStep(self.pinsR)
+                self.lastPin(self.pinsR)
             time.sleep(.01)
-    
-        allOff()
+        self.allOff()
